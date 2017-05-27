@@ -1,0 +1,144 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+entity stir_op is 
+port (stir_in0:in std_logic_vector(7 downto 0);
+      stir_in1:in std_logic_vector(7 downto 0);
+      stir_in2:in std_logic_vector(7 downto 0);
+      stir_in3:in std_logic_vector(7 downto 0);
+      stir_in4:in std_logic_vector(7 downto 0);
+      stir_in5:in std_logic_vector(7 downto 0);
+      stir_in6:in std_logic_vector(7 downto 0);
+      stir_in7:in std_logic_vector(7 downto 0);
+      stir_in8:in std_logic_vector(7 downto 0);
+      stir_in9:in std_logic_vector(7 downto 0);
+      stir_in10:in std_logic_vector(7 downto 0);
+      stir_in11:in std_logic_vector(7 downto 0);
+      stir_in12:in std_logic_vector(7 downto 0);
+      stir_in13:in std_logic_vector(7 downto 0);
+      stir_in14:in std_logic_vector(7 downto 0);
+      stir_in15:in std_logic_vector(7 downto 0);
+      stir_out00:out std_logic_vector(7 downto 0);
+      stir_out01:out std_logic_vector(7 downto 0);
+      stir_out02:out std_logic_vector(7 downto 0);
+stir_out03:out std_logic_vector(7 downto 0);
+      stir_out10:out std_logic_vector(7 downto 0);
+      stir_out11:out std_logic_vector(7 downto 0);
+      stir_out12:out std_logic_vector(7 downto 0);
+stir_out13:out std_logic_vector(7 downto 0);
+stir_out20:out std_logic_vector(7 downto 0);
+stir_out21:out std_logic_vector(7 downto 0);
+stir_out22:out std_logic_vector(7 downto 0);
+stir_out23:out std_logic_vector(7 downto 0);
+stir_out30:out std_logic_vector(7 downto 0);
+stir_out31:out std_logic_vector(7 downto 0);
+stir_out32:out std_logic_vector(7 downto 0);
+stir_out33:out std_logic_vector(7 downto 0));
+
+end stir_op;
+
+architecture behavioral of stir_op is 
+signal stir_i0:std_logic_vector(7 downto 0);
+signal stir_i1:std_logic_vector(7 downto 0);
+signal stir_i2:std_logic_vector(7 downto 0);
+signal stir_i3:std_logic_vector(7 downto 0);
+signal stir_i4:std_logic_vector(7 downto 0);
+signal stir_i5:std_logic_vector(7 downto 0);
+signal stir_i6:std_logic_vector(7 downto 0);
+signal stir_i7:std_logic_vector(7 downto 0);
+signal stir_i8:std_logic_vector(7 downto 0);
+signal stir_i9:std_logic_vector(7 downto 0);
+signal stir_i10:std_logic_vector(7 downto 0);
+signal stir_i11:std_logic_vector(7 downto 0);
+signal stir_i12:std_logic_vector(7 downto 0);
+signal stir_i13:std_logic_vector(7 downto 0);
+signal stir_i14:std_logic_vector(7 downto 0);
+signal stir_i15:std_logic_vector(7 downto 0);
+
+
+begin
+process(stir_in0,stir_in1,stir_in2,stir_in3,stir_in4,stir_in5,stir_in6,stir_in7,stir_in8,stir_in9,stir_in10,stir_in11,stir_in12,stir_in13,stir_in14,stir_in15)
+begin
+stir_out00(7 downto 6)<=stir_in0(7 downto 6);
+stir_out00(5 downto 4)<=stir_in1(7 downto 6);
+stir_out00(3 downto 2)<=stir_in2(7 downto 6);
+stir_out00(1 downto 0)<=stir_in3(7 downto 6);
+
+stir_out01(7 downto 6)<=stir_in0(5 downto 4);
+stir_out01(5 downto 4)<=stir_in1(5 downto 4);
+stir_out01(3 downto 2)<=stir_in2(5 downto 4);
+stir_out01(1 downto 0)<=stir_in3(5 downto 4);
+
+stir_out02(7 downto 6)<=stir_in0(3 downto 2);
+stir_out02(5 downto 4)<=stir_in1(3 downto 2);
+stir_out02(3 downto 2)<=stir_in2(3 downto 2);
+stir_out02(1 downto 0)<=stir_in3(3 downto 2);
+
+stir_out03(7 downto 6)<=stir_in0(1 downto 0);
+stir_out03(5 downto 4)<=stir_in1(1 downto 0);
+stir_out03(3 downto 2)<=stir_in2(1 downto 0);
+stir_out03(1 downto 0)<=stir_in3(1 downto 0);
+
+stir_out10(7 downto 6)<=stir_in4(7 downto 6);
+stir_out10(5 downto 4)<=stir_in5(7 downto 6);
+stir_out10(3 downto 2)<=stir_in6(7 downto 6);
+stir_out10(1 downto 0)<=stir_in7(7 downto 6);
+
+stir_out11(7 downto 6)<=stir_in4(5 downto 4);
+stir_out11(5 downto 4)<=stir_in5(5 downto 4);
+stir_out11(3 downto 2)<=stir_in6(5 downto 4);
+stir_out11(1 downto 0)<=stir_in7(5 downto 4);
+
+stir_out12(7 downto 6)<=stir_in4(3 downto 2);
+stir_out12(5 downto 4)<=stir_in5(3 downto 2);
+stir_out12(3 downto 2)<=stir_in6(3 downto 2);
+stir_out12(1 downto 0)<=stir_in7(3 downto 2);
+
+stir_out13(7 downto 6)<=stir_in4(1 downto 0);
+stir_out13(5 downto 4)<=stir_in5(1 downto 0);
+stir_out13(3 downto 2)<=stir_in6(1 downto 0);
+stir_out13(1 downto 0)<=stir_in7(1 downto 0);
+
+stir_out20(7 downto 6)<=stir_in8(7 downto 6);
+stir_out20(5 downto 4)<=stir_in9(7 downto 6);
+stir_out20(3 downto 2)<=stir_in10(7 downto 6);
+stir_out20(1 downto 0)<=stir_in11(7 downto 6);
+
+stir_out21(7 downto 6)<=stir_in8(5 downto 4);
+stir_out21(5 downto 4)<=stir_in9(5 downto 4);
+stir_out21(3 downto 2)<=stir_in10(5 downto 4);
+stir_out21(1 downto 0)<=stir_in11(5 downto 4);
+
+stir_out22(7 downto 6)<=stir_in8(3 downto 2);
+stir_out22(5 downto 4)<=stir_in9(3 downto 2);
+stir_out22(3 downto 2)<=stir_in10(3 downto 2);
+stir_out22(1 downto 0)<=stir_in11(3 downto 2);
+
+stir_out23(7 downto 6)<=stir_in8(1 downto 0);
+stir_out23(5 downto 4)<=stir_in9(1 downto 0);
+stir_out23(3 downto 2)<=stir_in10(1 downto 0);
+stir_out23(1 downto 0)<=stir_in11(1 downto 0);
+
+stir_out30(7 downto 6)<=stir_in12(7 downto 6);
+stir_out30(5 downto 4)<=stir_in13(7 downto 6);
+stir_out30(3 downto 2)<=stir_in14(7 downto 6);
+stir_out30(1 downto 0)<=stir_in15(7 downto 6);
+
+stir_out31(7 downto 6)<=stir_in12(5 downto 4);
+stir_out31(5 downto 4)<=stir_in13(5 downto 4);
+stir_out31(3 downto 2)<=stir_in14(5 downto 4);
+stir_out31(1 downto 0)<=stir_in15(5 downto 4);
+
+stir_out32(7 downto 6)<=stir_in12(3 downto 2);
+stir_out32(5 downto 4)<=stir_in13(3 downto 2);
+stir_out32(3 downto 2)<=stir_in14(3 downto 2);
+stir_out32(1 downto 0)<=stir_in15(3 downto 2);
+
+stir_out33(7 downto 6)<=stir_in12(1 downto 0);
+stir_out33(5 downto 4)<=stir_in13(1 downto 0);
+stir_out33(3 downto 2)<=stir_in14(1 downto 0);
+stir_out33(1 downto 0)<=stir_in15(1 downto 0);
+
+end process;
+
+end;
+      

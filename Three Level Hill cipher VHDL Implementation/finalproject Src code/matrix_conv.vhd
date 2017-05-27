@@ -1,0 +1,49 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+use ieee.numeric_std.all;
+
+entity vector_conv is
+port( vector_in: in std_logic_vector (127 downto 0);
+      mat_out00:inout std_logic_vector(7 downto 0);
+mat_out01:inout std_logic_vector(7 downto 0);
+mat_out02:inout std_logic_vector(7 downto 0);
+mat_out03:inout std_logic_vector(7 downto 0);
+mat_out10:inout std_logic_vector(7 downto 0);
+mat_out11:inout std_logic_vector(7 downto 0);
+mat_out12:inout std_logic_vector(7 downto 0);
+mat_out13:inout std_logic_vector(7 downto 0);
+mat_out20:inout std_logic_vector(7 downto 0);
+mat_out21:inout std_logic_vector(7 downto 0);
+mat_out22:inout std_logic_vector(7 downto 0);
+mat_out23:inout std_logic_vector(7 downto 0);
+mat_out30:inout std_logic_vector(7 downto 0);
+mat_out31:inout std_logic_vector(7 downto 0);
+mat_out32:inout std_logic_vector(7 downto 0);
+mat_out33:inout std_logic_vector(7 downto 0));
+end vector_conv;
+architecture behavioral of vector_conv is
+begin
+process(vector_in)
+begin
+mat_out00<=vector_in(127 downto 120);
+mat_out01<=vector_in(119 downto 112 );
+mat_out02<=vector_in(111 downto 104);
+mat_out03<=vector_in(103 downto 96 );
+
+mat_out10<=vector_in(95 downto 88);
+mat_out11<=vector_in(87 downto 80 );
+mat_out12<=vector_in(79 downto 72 );
+mat_out13<=vector_in(71 downto 64 );
+
+mat_out20<=vector_in(63 downto 56 );
+mat_out21<=vector_in(55 downto 48 );
+mat_out22<=vector_in(47 downto 40);
+mat_out23<=vector_in(39 downto 32);
+
+mat_out30<=vector_in(31 downto 24);
+mat_out31<=vector_in(23 downto 16 );
+mat_out32<=vector_in(15 downto 8 );
+mat_out33<=vector_in(7 downto 0 );
+end process;
+end;

@@ -1,0 +1,35 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE work.mat.all;
+use ieee.numeric_std.all;
+
+entity mul_test is
+port(a:in matrix;
+     b:in matrix;
+     c: out matrix);
+end mul_test;
+architecture structure of mul_test is 
+component matrix_mul is
+port(plain_text1:in matrix;
+     key:in matrix;
+     cipher_out: inout matrix);
+end component;
+
+component vector_conv is
+port( vector_in: in std_logic_vector (127 downto 0);
+      mat_out1:inout matrix);
+end component;
+
+signal pt_out:matrix;
+signal ct_out:matrix;
+signal m_out:matrix;
+signal matin1:matrix;
+signal matin2:matrix;
+begin
+--u1: vector_conv port map(a,pt_out);
+--matin1<=pt_out;
+--u2: vector_conv port map(b,ct_out);
+--matin2<=ct_out;
+u3: matrix_mul port map(a,b,m_out);
+mat_out1<=m_out;
+end;

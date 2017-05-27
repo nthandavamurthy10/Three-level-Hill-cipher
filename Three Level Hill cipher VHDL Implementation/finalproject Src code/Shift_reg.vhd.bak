@@ -1,0 +1,43 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+entity random_number is
+port(clk:in std_logic;
+     k1:inout std_logic_vector(255 downto 0);
+     k2:inout std_logic_vector(255 downto 0);
+     k3:inout std_logic_vector(255 downto 0));
+end random_number;
+
+architecture behavioral of random_number is
+signal q: std_logic_vector (255 downto 0):=X"123456789ABC0DEF0123456789ABCDEF0123456789ABCDEF0124567ACB178632";
+signal random_num1: std_logic_vector (255 downto 0);
+signal random_num2: std_logic_vector (255 downto 0);
+signal temp1: std_logic_vector (255 downto 0);
+signal temp2: std_logic_vector (255 downto 0);
+
+begin
+process(clk)
+variable temp:integer:=2;
+begin
+
+if(clk='1') then
+for i in 0 to (temp) loop
+temp1(254 downto 0)<= q(255 downto 1);
+temp1(255) <= q(0) XOR q(1);                 
+end loop;
+end if;
+--random_num1<=q;
+--
+--temp1(255)<=random_num1(0);
+--temp1(254 downto 0)<=random_num1(255 downto 1);
+--k2<=temp1;
+--
+--random_num2<=temp1;
+--
+--temp2(255)<=random_num2(0);
+--temp2(254 downto 0)<=random_num2(255 downto 1);
+--k3<=temp2;
+end process;
+k1<=temp1;
+end;
